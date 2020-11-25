@@ -4,7 +4,7 @@
   "description": "![Actions Status](/workflows/hexlet-check/badge.svg)",
   "main": "index.js",
   "bin": {
-    "code": "brain-games.js"
+    "brain-games": "bin/brain-games.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +18,6 @@
   "bugs": {
     "url": "https://github.com/MikhailManzik/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/MikhailManzik/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/MikhailManzik/frontend-project-lvl1#readme",
+  "type": "module"
 }
