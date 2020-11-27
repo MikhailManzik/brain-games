@@ -19,5 +19,8 @@
     "url": "https://github.com/MikhailManzik/frontend-project-lvl1/issues"
   },
   "homepage": "https://github.com/MikhailManzik/frontend-project-lvl1#readme",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
