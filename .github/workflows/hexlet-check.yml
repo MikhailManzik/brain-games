@@ -1,9 +1,6 @@
 name: hexlet-check
 
-on:
-  push:
-    branches:
-      - master
+on: push
 
 jobs:
   build:
@@ -11,9 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Hexlet project check
-        uses: hexlet/project-action@release
-      
       - name: npm install, build
         run: make install
       - name: run linter
