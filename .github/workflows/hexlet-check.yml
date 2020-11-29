@@ -17,6 +17,6 @@ jobs:
       - name: Run linter
         run: |
           make lint
-                env:
+        env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
