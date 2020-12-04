@@ -17,17 +17,15 @@ for (let a = 0; a < 3; a += 1) {
   console.log(`Question: ${randomNumber}`);
   const answer = readlineSync.question('You answer: ');
 
-  if (answer !== 'yes' && answer !== 'no') {
-    console.log(`${answer} is not a number`);
-    console.log(`Let's try again, ${playerName}`);
-    process.exit();
-  }
-
   if (randomNumber % 2 === 0) {
     if (answer === 'yes') {
       console.log('Correct!');
     } else if (answer === 'no') {
-      console.log('"no" is wrong answer ;(. Correct answer was "yes".');
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "yes".`);
+      console.log(`Let's try again, ${playerName}`);
+      process.exit();
+    } else {
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "yes".`);
       console.log(`Let's try again, ${playerName}`);
       process.exit();
     }
@@ -35,7 +33,11 @@ for (let a = 0; a < 3; a += 1) {
     if (answer === 'no') {
       console.log('Correct!');
     } else if (answer === 'yes') {
-      console.log('"yes" is wrong answer ;(. Correct answer was "no".');
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "no".`);
+      console.log(`Let's try again, ${playerName}`);
+      process.exit();
+    } else {
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "no".`);
       console.log(`Let's try again, ${playerName}`);
       process.exit();
     }
