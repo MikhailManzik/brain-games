@@ -20,10 +20,6 @@ for (let a = 0; a < 3; a += 1) {
   if (randomNumber % 2 === 0) {
     if (answer === 'yes') {
       console.log('Correct!');
-    } else if (answer === 'no') {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "yes".`);
-      console.log(`Let's try again, ${playerName}`);
-      process.exit();
     } else {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "yes".`);
       console.log(`Let's try again, ${playerName}`);
@@ -32,10 +28,6 @@ for (let a = 0; a < 3; a += 1) {
   } else if (randomNumber % 2 !== 0) {
     if (answer === 'no') {
       console.log('Correct!');
-    } else if (answer === 'yes') {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "no".`);
-      console.log(`Let's try again, ${playerName}`);
-      process.exit();
     } else {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "no".`);
       console.log(`Let's try again, ${playerName}`);
