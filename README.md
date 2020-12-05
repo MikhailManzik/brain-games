@@ -19,7 +19,6 @@
 
 ```
 $ sudo npm link 
-
 ```
 
 ## Игра: "Проверка на четность"
@@ -30,9 +29,22 @@ $ sudo npm link
 
 ```
 $ brain-even
-
 ```  
 
 #### Пример игры
 
 [![asciicast](https://asciinema.org/a/XzU1t9ODsu6TRdqiJOlbXPJ8F.svg)](https://asciinema.org/a/XzU1t9ODsu6TRdqiJOlbXPJ8F)
+
+## Игра: "Калькулятор"
+
+Суть игры в следующем: пользователю показывается случайное математическое выражение, например **35 + 16**, которое нужно вычислить и записать правильный ответ.
+
+#### Запуск игры
+
+```
+$ brain-calc
+```  
+
+#### Пример игры
+
+[![asciicast](https://asciinema.org/a/lQrwFe3d6bUoQ9wR71APUHbWg.svg)](https://asciinema.org/a/lQrwFe3d6bUoQ9wR71APUHbWg)
