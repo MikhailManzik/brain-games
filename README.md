@@ -22,7 +22,7 @@ $ sudo npm link
 
 ## Игра: "Проверка на четность"
 
-Игрок видит случайное число. Ему нужно ответить **yes**, если число чётное, или **no** — если нечётное.
+Суть игры в следующем: игрокe показывается случайное число. Ему нужно ответить **yes**, если число чётное, или **no** — если нечётное.
 
 #### Запуск игры
 
@@ -75,3 +75,17 @@ $ brain-progression
 #### Пример игры
 
 [![asciicast](https://asciinema.org/a/WwCJNGOwPVhHDhiqWzboqCHao.svg)](https://asciinema.org/a/WwCJNGOwPVhHDhiqWzboqCHao)
+
+## Игра: "Простое ли число?"
+
+Суть игры в следующем: игроку показывается случайное число. Ему нужно ответить **yes**, если число простое, или **no** — если нет.
+
+#### Запуск игры
+
+```
+$ brain-prime
+```  
+
+#### Пример игры
+
+[![asciicast](https://asciinema.org/a/fpgk93BWGWIsaD8cstllvVbsa.svg)](https://asciinema.org/a/fpgk93BWGWIsaD8cstllvVbsa)
