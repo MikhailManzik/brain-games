@@ -1,10 +1,10 @@
-import readlineSync from 'readline-sync';
 import {
-  greetPlayer,
-  getRandomNumber,
   rounds,
-  showMessage,
+  askQuestion,
+  checkPlayerAnswer,
+  showMessageVictory,
 } from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const isPrimeNumber = (number) => {
   if (number < 2) {
@@ -19,16 +19,14 @@ const isPrimeNumber = (number) => {
   return 'yes';
 };
 
-const playerName = greetPlayer();
 console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
 
 export default () => {
   for (let a = 0; a < rounds; a += 1) {
     const randomNumber = getRandomNumber(50);
-    console.log(`Question: ${randomNumber}`);
+    askQuestion(randomNumber);
     const correctAnswer = isPrimeNumber(randomNumber);
-    const playerAnswer = readlineSync.question('You answer: ');
-    showMessage(playerName, playerAnswer, correctAnswer);
+    checkPlayerAnswer(correctAnswer);
   }
-  console.log(`Congratulations, ${playerName}`);
+  showMessageVictory();
 };

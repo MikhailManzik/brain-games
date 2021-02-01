@@ -1,10 +1,10 @@
-import readlineSync from 'readline-sync';
 import {
-  greetPlayer,
-  getRandomNumber,
   rounds,
-  showMessage,
+  checkPlayerAnswer,
+  showMessageVictory,
+  askQuestion,
 } from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const getArithmeticProgression = (number) => {
   const step = Math.floor(Math.random() * (5 - 1) + 2);
@@ -20,19 +20,17 @@ const getArithmeticProgression = (number) => {
   return arrayNumbers;
 };
 
-const playerName = greetPlayer();
 console.log('What number is missing in the progression?');
 
 export default () => {
   for (let a = 0; a < rounds; a += 1) {
     const arrayArithmeticProgressionNumbers = getArithmeticProgression(getRandomNumber(50));
     const randomIndex = getRandomNumber(10);
-    const correctAnswer = Number(arrayArithmeticProgressionNumbers[randomIndex]);
+    const correctAnswer = String(arrayArithmeticProgressionNumbers[randomIndex]);
 
     arrayArithmeticProgressionNumbers[randomIndex] = '..';
-    console.log(`Question: ${arrayArithmeticProgressionNumbers}`);
-    const playerAnswer = Number(readlineSync.question('You answer: '));
-    showMessage(playerName, playerAnswer, correctAnswer);
+    askQuestion(`${arrayArithmeticProgressionNumbers}`);
+    checkPlayerAnswer(correctAnswer);
   }
-  console.log(`Congratulations, ${playerName}`);
+  showMessageVictory();
 };

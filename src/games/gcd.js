@@ -1,10 +1,10 @@
-import readlineSync from 'readline-sync';
 import {
-  greetPlayer,
-  getRandomNumber,
   rounds,
-  showMessage,
+  askQuestion,
+  checkPlayerAnswer,
+  showMessageVictory,
 } from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const getGreatestCommonDivisor = (firstItem, secondItem) => {
   if (firstItem === 0 || secondItem === 0) {
@@ -15,7 +15,6 @@ const getGreatestCommonDivisor = (firstItem, secondItem) => {
   return getGreatestCommonDivisor(firstItem, secondItem - firstItem);
 };
 
-const playerName = greetPlayer();
 console.log('Find the greatest common divisor of given numbers');
 
 export default () => {
@@ -24,11 +23,10 @@ export default () => {
     const secondNubmer = getRandomNumber(50);
 
     getGreatestCommonDivisor(firstNumber, secondNubmer);
-
-    console.log(`Question: ${firstNumber} ${secondNubmer}`);
+    const question = `${firstNumber} ${secondNubmer}`;
+    askQuestion(question);
     const correctAnswer = String(getGreatestCommonDivisor(firstNumber, secondNubmer));
-    const playerAnswer = readlineSync.question('You answer: ');
-    showMessage(playerName, playerAnswer, correctAnswer);
+    checkPlayerAnswer(correctAnswer);
   }
-  console.log(`Congratulations, ${playerName}`);
+  showMessageVictory();
 };

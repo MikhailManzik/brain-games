@@ -1,10 +1,10 @@
-import readlineSync from 'readline-sync';
 import {
-  greetPlayer,
-  getRandomNumber,
   rounds,
-  showMessage,
+  askQuestion,
+  checkPlayerAnswer,
+  showMessageVictory,
 } from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const isEvenNumber = (number) => {
   if (number % 2 === 0) {
@@ -13,16 +13,14 @@ const isEvenNumber = (number) => {
   return 'no';
 };
 
-const playerName = greetPlayer();
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 export default () => {
   for (let a = 0; a < rounds; a += 1) {
     const randomNumber = getRandomNumber(100);
-    console.log(`Question: ${randomNumber}`);
-    const playerAnswer = readlineSync.question('You answer: ');
+    askQuestion(randomNumber);
     const correctAnswer = isEvenNumber(randomNumber);
-    showMessage(playerName, playerAnswer, correctAnswer);
+    checkPlayerAnswer(correctAnswer);
   }
-  console.log(`Congratulations, ${playerName}`);
+  showMessageVictory();
 };

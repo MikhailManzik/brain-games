@@ -1,10 +1,11 @@
-import readlineSync from 'readline-sync';
+// import readlineSync from 'readline-sync';
 import {
   rounds,
-  greetPlayer,
-  getRandomNumber,
-  showMessage,
+  askQuestion,
+  checkPlayerAnswer,
+  showMessageVictory,
 } from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const operationSymbols = ['+', '-', '*'];
 
@@ -33,8 +34,6 @@ const calcArithmeticOperation = (symbol, firstValue, secondValue) => {
   }
   return result;
 };
-
-const playerName = greetPlayer();
 console.log('What is the result of the expression?');
 
 export default () => {
@@ -42,10 +41,9 @@ export default () => {
     const randomSymbol = getRandomOperationSymbol(operationSymbols);
     const firstNumber = getRandomNumber(10);
     const secondNubmer = getRandomNumber(10);
-    console.log(`Question: ${firstNumber} ${randomSymbol} ${secondNubmer}`);
+    askQuestion(`${firstNumber} ${randomSymbol} ${secondNubmer}`);
     const correctAnswer = String(calcArithmeticOperation(randomSymbol, firstNumber, secondNubmer));
-    const playerAnswer = readlineSync.question('You answer: ');
-    showMessage(playerName, playerAnswer, correctAnswer);
+    checkPlayerAnswer(correctAnswer);
   }
-  console.log(`Congratulations, ${playerName}`);
+  showMessageVictory();
 };
