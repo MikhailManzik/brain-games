@@ -9,34 +9,28 @@ import getRandomNumber from '../utils.js';
 
 const operationSymbols = ['+', '-', '*'];
 
-const getRandomOperationSymbol = (arraySymbols) => {
-  let randomNumber = 0;
-  let randomSymbol = 0;
-  randomNumber = Math.floor(Math.random() * 3);
-  randomSymbol = arraySymbols[randomNumber];
+const getRandomOperationSymbol = (symbols) => {
+  const randomNumber = getRandomNumber(3);
+  const randomSymbol = symbols[randomNumber];
   return randomSymbol;
 };
 
 const calcArithmeticOperation = (symbol, firstValue, secondValue) => {
-  let result = 0;
   switch (symbol) {
     case '+':
-      result = firstValue + secondValue;
-      break;
+      return firstValue + secondValue;
     case '-':
-      result = firstValue - secondValue;
-      break;
+      return firstValue - secondValue;
     case '*':
-      result = firstValue * secondValue;
-      break;
+      return firstValue * secondValue;
     default:
-      break;
+      return '';
   }
-  return result;
 };
-console.log('What is the result of the expression?');
 
 export default () => {
+  console.log('What is the result of the expression?');
+
   for (let a = 0; a < rounds; a += 1) {
     const randomSymbol = getRandomOperationSymbol(operationSymbols);
     const firstNumber = getRandomNumber(10);

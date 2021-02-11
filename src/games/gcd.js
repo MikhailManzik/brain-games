@@ -15,9 +15,9 @@ const getGreatestCommonDivisor = (firstItem, secondItem) => {
   return getGreatestCommonDivisor(firstItem, secondItem - firstItem);
 };
 
-console.log('Find the greatest common divisor of given numbers');
-
 export default () => {
+  console.log('Find the greatest common divisor of given numbers');
+
   for (let a = 0; a < rounds; a += 1) {
     const firstNumber = getRandomNumber(50);
     const secondNubmer = getRandomNumber(50);

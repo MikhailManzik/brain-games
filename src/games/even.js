@@ -4,22 +4,18 @@ import {
   checkPlayerAnswer,
   showMessageVictory,
 } from '../index.js';
-import getRandomNumber from '../utils.js';
-
-const isEvenNumber = (number) => {
-  if (number % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
-};
-
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
+import {
+  getRandomNumber,
+  isEvenNumber,
+} from '../utils.js';
 
 export default () => {
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+
   for (let a = 0; a < rounds; a += 1) {
     const randomNumber = getRandomNumber(100);
     askQuestion(randomNumber);
-    const correctAnswer = isEvenNumber(randomNumber);
+    const correctAnswer = isEvenNumber(randomNumber) ? 'yes' : 'no';
     checkPlayerAnswer(correctAnswer);
   }
   showMessageVictory();

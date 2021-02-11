@@ -19,9 +19,9 @@ const isPrimeNumber = (number) => {
   return 'yes';
 };
 
-console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
-
 export default () => {
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
+
   for (let a = 0; a < rounds; a += 1) {
     const randomNumber = getRandomNumber(50);
     askQuestion(randomNumber);

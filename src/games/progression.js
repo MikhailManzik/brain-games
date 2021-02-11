@@ -20,14 +20,13 @@ const getArithmeticProgression = (number) => {
   return arrayNumbers;
 };
 
-console.log('What number is missing in the progression?');
-
 export default () => {
+  console.log('What number is missing in the progression?');
+
   for (let a = 0; a < rounds; a += 1) {
     const arrayArithmeticProgressionNumbers = getArithmeticProgression(getRandomNumber(50));
     const randomIndex = getRandomNumber(10);
     const correctAnswer = String(arrayArithmeticProgressionNumbers[randomIndex]);
-
     arrayArithmeticProgressionNumbers[randomIndex] = '..';
     askQuestion(`${arrayArithmeticProgressionNumbers}`);
     checkPlayerAnswer(correctAnswer);
