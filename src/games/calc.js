@@ -1,16 +1,10 @@
-// import readlineSync from 'readline-sync';
-import {
-  rounds,
-  askQuestion,
-  checkPlayerAnswer,
-  showMessageVictory,
-} from '../index.js';
-import getRandomNumber from '../utils.js';
+import startGame from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
 const operationSymbols = ['+', '-', '*'];
 
 const getRandomOperationSymbol = (symbols) => {
-  const randomNumber = getRandomNumber(3);
+  const randomNumber = getRandomNumber(0, 2);
   const randomSymbol = symbols[randomNumber];
   return randomSymbol;
 };
@@ -28,16 +22,14 @@ const calcArithmeticOperation = (symbol, firstValue, secondValue) => {
   }
 };
 
-export default () => {
-  console.log('What is the result of the expression?');
+const randomSymbol = getRandomOperationSymbol(operationSymbols);
+const firstNumber = getRandomNumber(0, 10);
+const secondNubmer = getRandomNumber(0, 10);
 
-  for (let a = 0; a < rounds; a += 1) {
-    const randomSymbol = getRandomOperationSymbol(operationSymbols);
-    const firstNumber = getRandomNumber(10);
-    const secondNubmer = getRandomNumber(10);
-    askQuestion(`${firstNumber} ${randomSymbol} ${secondNubmer}`);
-    const correctAnswer = String(calcArithmeticOperation(randomSymbol, firstNumber, secondNubmer));
-    checkPlayerAnswer(correctAnswer);
-  }
-  showMessageVictory();
+const question = `${firstNumber} ${randomSymbol} ${secondNubmer}`;
+const correctAnswer = String(calcArithmeticOperation(randomSymbol, firstNumber, secondNubmer));
+const description = 'What is the result of the expression?';
+
+export default () => {
+  startGame(description, question, correctAnswer);
 };

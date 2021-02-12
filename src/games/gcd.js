@@ -2,7 +2,6 @@ import {
   rounds,
   askQuestion,
   checkPlayerAnswer,
-  showMessageVictory,
 } from '../index.js';
 import getRandomNumber from '../utils.js';
 
@@ -19,8 +18,8 @@ export default () => {
   console.log('Find the greatest common divisor of given numbers');
 
   for (let a = 0; a < rounds; a += 1) {
-    const firstNumber = getRandomNumber(50);
-    const secondNubmer = getRandomNumber(50);
+    const firstNumber = getRandomNumber(1, 50);
+    const secondNubmer = getRandomNumber(1, 50);
 
     getGreatestCommonDivisor(firstNumber, secondNubmer);
     const question = `${firstNumber} ${secondNubmer}`;
@@ -28,5 +27,4 @@ export default () => {
     const correctAnswer = String(getGreatestCommonDivisor(firstNumber, secondNubmer));
     checkPlayerAnswer(correctAnswer);
   }
-  showMessageVictory();
 };

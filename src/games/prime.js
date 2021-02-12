@@ -2,7 +2,6 @@ import {
   rounds,
   askQuestion,
   checkPlayerAnswer,
-  showMessageVictory,
 } from '../index.js';
 import getRandomNumber from '../utils.js';
 
@@ -23,10 +22,9 @@ export default () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
 
   for (let a = 0; a < rounds; a += 1) {
-    const randomNumber = getRandomNumber(50);
+    const randomNumber = getRandomNumber(2, 50);
     askQuestion(randomNumber);
     const correctAnswer = isPrimeNumber(randomNumber);
     checkPlayerAnswer(correctAnswer);
   }
-  showMessageVictory();
 };
