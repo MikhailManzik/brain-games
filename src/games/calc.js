@@ -31,5 +31,5 @@ const correctAnswer = String(calcArithmeticOperation(randomSymbol, firstNumber, 
 const description = 'What is the result of the expression?';
 
 export default () => {
-  startGame(description, question, correctAnswer);
+  startGame(question, description, correctAnswer);
 };
