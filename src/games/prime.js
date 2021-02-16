@@ -2,10 +2,12 @@ import startGame from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
 const isPrimeNumber = (number) => {
-  if (number % number === 0 && number % 1 === 0) {
-    return true;
+  for (let a = 2; a < number; a += 1) {
+    if (number % a === 0) {
+      return false;
+    }
   }
-  return false;
+  return true;
 };
 
 const getQuestionAndAnswer = () => {
