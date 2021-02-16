@@ -1,30 +1,25 @@
-import {
-  rounds,
-  askQuestion,
-  checkPlayerAnswer,
-} from '../index.js';
-import getRandomNumber from '../utils.js';
+import startGame from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
 const isPrimeNumber = (number) => {
-  if (number < 2) {
-    return 'no';
+  if (number % number === 0 && number % 1 === 0) {
+    return true;
   }
+  return false;
+};
 
-  for (let a = 2; a < number; a += 1) {
-    if (number % a === 0) {
-      return 'no';
-    }
-  }
-  return 'yes';
+const getQuestionAndAnswer = () => {
+  const question = getRandomNumber(2, 50);
+  const correctAnswer = isPrimeNumber(question) ? 'yes' : 'no';
+
+  return [question, correctAnswer];
+};
+
+const getDescription = () => {
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+  return description;
 };
 
 export default () => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
-
-  for (let a = 0; a < rounds; a += 1) {
-    const randomNumber = getRandomNumber(2, 50);
-    askQuestion(randomNumber);
-    const correctAnswer = isPrimeNumber(randomNumber);
-    checkPlayerAnswer(correctAnswer);
-  }
+  startGame(getDescription(), getQuestionAndAnswer);
 };

@@ -1,9 +1,5 @@
-import {
-  rounds,
-  checkPlayerAnswer,
-  askQuestion,
-} from '../index.js';
-import getRandomNumber from '../utils.js';
+import startGame from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
 const getArithmeticProgression = (number) => {
   const step = getRandomNumber(2, 5);
@@ -19,15 +15,22 @@ const getArithmeticProgression = (number) => {
   return setNumbers;
 };
 
-export default () => {
-  console.log('What number is missing in the progression?');
+const getQuestionAndAnswer = () => {
+  const arithmeticProgressionNumbers = getArithmeticProgression(getRandomNumber(0, 25));
+  const randomIndex = getRandomNumber(0, 9);
 
-  for (let a = 0; a < rounds; a += 1) {
-    const arithmeticProgressionNumbers = getArithmeticProgression(getRandomNumber(0, 25));
-    const randomIndex = getRandomNumber(0, 9);
-    const correctAnswer = String(arithmeticProgressionNumbers[randomIndex]);
-    arithmeticProgressionNumbers[randomIndex] = '..';
-    askQuestion(`${arithmeticProgressionNumbers}`);
-    checkPlayerAnswer(correctAnswer);
-  }
+  const correctAnswer = String(arithmeticProgressionNumbers[randomIndex]);
+  arithmeticProgressionNumbers[randomIndex] = '..';
+  const question = arithmeticProgressionNumbers;
+
+  return [question, correctAnswer];
+};
+
+const getDescription = () => {
+  const description = 'What number is missing in the progression?';
+  return description;
+};
+
+export default () => {
+  startGame(getDescription(), getQuestionAndAnswer);
 };

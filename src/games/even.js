@@ -1,20 +1,21 @@
-import {
-  rounds,
-  askQuestion,
-  checkPlayerAnswer,
-} from '../index.js';
+import startGame from '../index.js';
 import {
   getRandomNumber,
   isEvenNumber,
 } from '../utils.js';
 
-export default () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const getQuestionAndAnswer = () => {
+  const question = getRandomNumber(0, 100);
+  const correctAnswer = isEvenNumber(question) ? 'yes' : 'no';
 
-  for (let a = 0; a < rounds; a += 1) {
-    const randomNumber = getRandomNumber(0, 100);
-    askQuestion(randomNumber);
-    const correctAnswer = isEvenNumber(randomNumber) ? 'yes' : 'no';
-    checkPlayerAnswer(correctAnswer);
-  }
+  return [question, correctAnswer];
+};
+
+const getDescription = () => {
+  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+  return description;
+};
+
+export default () => {
+  startGame(getDescription(), getQuestionAndAnswer);
 };
