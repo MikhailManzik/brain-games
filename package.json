@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "![Actions Status](/workflows/hexlet-check/badge.svg)",
+  "description": "brain-games",
   "main": "index.js",
   "bin": {
     "brain-games": "bin/brain-games.js",
