@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import runGame from '../index.js';
 import {
   getRandomNumber,
   isEvenNumber,
@@ -17,5 +17,5 @@ const getDescription = () => {
 };
 
 export default () => {
-  startGame(getDescription(), getQuestionAndAnswer);
+  runGame(getDescription(), getQuestionAndAnswer);
 };

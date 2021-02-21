@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import runGame from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
 const isPrimeNumber = (number) => {
@@ -23,5 +23,5 @@ const getDescription = () => {
 };
 
 export default () => {
-  startGame(getDescription(), getQuestionAndAnswer);
+  runGame(getDescription(), getQuestionAndAnswer);
 };
