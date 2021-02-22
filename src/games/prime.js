@@ -17,11 +17,8 @@ const getQuestionAndAnswer = () => {
   return [question, correctAnswer];
 };
 
-const getDescription = () => {
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-  return description;
-};
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 export default () => {
-  runGame(getDescription(), getQuestionAndAnswer);
+  runGame(description, getQuestionAndAnswer);
 };

@@ -11,11 +11,8 @@ const getQuestionAndAnswer = () => {
   return [question, correctAnswer];
 };
 
-const getDescription = () => {
-  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
-  return description;
-};
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 export default () => {
-  runGame(getDescription(), getQuestionAndAnswer);
+  runGame(description, getQuestionAndAnswer);
 };

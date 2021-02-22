@@ -4,7 +4,8 @@ import { getRandomNumber } from '../utils.js';
 const getGreatestCommonDivisor = (firstItem, secondItem) => {
   if (firstItem === 0 || secondItem === 0) {
     return firstItem + secondItem;
-  } if (firstItem > secondItem) {
+  }
+  if (firstItem > secondItem) {
     return getGreatestCommonDivisor(firstItem - secondItem, secondItem);
   }
   return getGreatestCommonDivisor(firstItem, secondItem - firstItem);
@@ -20,11 +21,8 @@ const getQuestionAndAnswer = () => {
   return [question, correctAnswer];
 };
 
-const getDescription = () => {
-  const description = 'Find the greatest common divisor of given numbers';
-  return description;
-};
+const description = 'Find the greatest common divisor of given numbers';
 
 export default () => {
-  runGame(getDescription(), getQuestionAndAnswer);
+  runGame(description, getQuestionAndAnswer);
 };

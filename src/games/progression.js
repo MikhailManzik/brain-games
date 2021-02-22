@@ -1,22 +1,22 @@
 import runGame from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
-const getArithmeticProgression = (number) => {
+const getArithmeticProgression = () => {
+  let progressionNumber = getRandomNumber(0, 50);
   const step = getRandomNumber(2, 5);
-  let startNumber = number;
-  let counter = 10;
-  const setNumbers = [];
+  let progressionLength = 0;
+  const progressionNumbers = [];
 
-  while (counter > 0) {
-    setNumbers.push(startNumber);
-    startNumber += step;
-    counter -= 1;
+  while (progressionLength < 10) {
+    progressionNumbers.push(progressionNumber);
+    progressionNumber += step;
+    progressionLength += 1;
   }
-  return setNumbers;
+  return progressionNumbers;
 };
 
 const getQuestionAndAnswer = () => {
-  const arithmeticProgressionNumbers = getArithmeticProgression(getRandomNumber(0, 25));
+  const arithmeticProgressionNumbers = getArithmeticProgression();
   const randomIndex = getRandomNumber(0, 9);
 
   const correctAnswer = String(arithmeticProgressionNumbers[randomIndex]);
@@ -26,11 +26,8 @@ const getQuestionAndAnswer = () => {
   return [question, correctAnswer];
 };
 
-const getDescription = () => {
-  const description = 'What number is missing in the progression?';
-  return description;
-};
+const description = 'What number is missing in the progression?';
 
 export default () => {
-  runGame(getDescription(), getQuestionAndAnswer);
+  runGame(description, getQuestionAndAnswer);
 };

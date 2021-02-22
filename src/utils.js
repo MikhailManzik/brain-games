@@ -3,9 +3,4 @@ export const getRandomNumber = (minRange, maxRange) => {
   return randomNumber;
 };
 
-export const isEvenNumber = (number) => {
-  if (number % 2 === 0) {
-    return true;
-  }
-  return false;
-};
+export const isEvenNumber = (number) => number % 2 === 0;

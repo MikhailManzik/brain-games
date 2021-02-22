@@ -4,8 +4,9 @@ import { getRandomNumber } from '../utils.js';
 const operationSymbols = ['+', '-', '*'];
 
 const getRandomOperationSymbol = (symbols) => {
-  const randomNumber = getRandomNumber(0, 3);
-  const randomSymbol = symbols[randomNumber];
+  const lengthSymbols = symbols.length;
+  const randomIndex = getRandomNumber(0, lengthSymbols);
+  const randomSymbol = symbols[randomIndex];
   return randomSymbol;
 };
 
@@ -29,11 +30,8 @@ const getQuestionAndAnswer = () => {
   return [question, correctAnswer];
 };
 
-const getDescription = () => {
-  const description = 'What is the result of the expression?';
-  return description;
-};
+const description = 'What is the result of the expression?';
 
 export default () => {
-  runGame(getDescription(), getQuestionAndAnswer);
+  runGame(description, getQuestionAndAnswer);
 };
