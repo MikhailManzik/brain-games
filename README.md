@@ -1,5 +1,5 @@
 ![hexlet-check](https://github.com/MikhailManzik/frontend-project-lvl1/workflows/hexlet-check/badge.svg)
-
+![linter](https://github.com/MikhailManzik/frontend-project-lvl1/workflows/linter/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/dd78c60ae55d258dbc11/maintainability)](https://codeclimate.com/github/MikhailManzik/frontend-project-lvl1/maintainability)
 
 # Игры разума (JavaScript)
