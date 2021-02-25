@@ -1,10 +1,10 @@
 # Name of workflow
-name: hexlet-check
+name: linter
 # Trigger the workflow on push
 on: push
 
 jobs:
-  build:
+  linter:
     # The type of machine to run the job on
     runs-on: ubuntu-latest
     
@@ -12,6 +12,6 @@ jobs:
     # Check-out repository under GitHub workspace
     # https://github.com/actions/checkout
     - uses: actions/checkout@v2
-    # Install and build project
-    - name: npm install, build
-      run: make install
+    # run linter
+    - name: run linter
+      run: make lint
