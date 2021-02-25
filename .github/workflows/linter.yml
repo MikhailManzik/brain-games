@@ -12,6 +12,9 @@ jobs:
     # Check-out repository under GitHub workspace
     # https://github.com/actions/checkout
     - uses: actions/checkout@v2
+    # Install and build project
+    - name: npm install, build
+      run: make install
     # run linter
     - name: run linter
       run: make lint

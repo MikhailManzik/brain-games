@@ -15,3 +15,4 @@ jobs:
     # Install and build project
     - name: npm install, build
       run: make install
+    
