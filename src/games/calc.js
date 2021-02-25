@@ -2,10 +2,11 @@ import runGame from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
 const operationSymbols = ['+', '-', '*'];
+const description = 'What is the result of the expression?';
 
 const getRandomOperationSymbol = (symbols) => {
-  const lengthSymbols = symbols.length;
-  const randomIndex = getRandomNumber(0, lengthSymbols);
+  const symbolsLength = symbols.length;
+  const randomIndex = getRandomNumber(0, symbolsLength);
   const randomSymbol = symbols[randomIndex];
   return randomSymbol;
 };
@@ -29,8 +30,6 @@ const getQuestionAndAnswer = () => {
 
   return [question, correctAnswer];
 };
-
-const description = 'What is the result of the expression?';
 
 export default () => {
   runGame(description, getQuestionAndAnswer);
